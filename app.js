@@ -15,6 +15,7 @@
         res.send("Hello World");
     });
 
+    // listen for requests
     app.listen(app.get('port'), () => {
         console.log(`Server on port ${app.get('port')}`);
     })
