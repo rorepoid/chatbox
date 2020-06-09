@@ -5,9 +5,10 @@
     { urlencoded, json } = require("body-parser"),
     crypto = require("crypto"),
     path = require("path"),
+    config = require('./src/services/config'),
     app = express();
 
-    app.set('port', process.env.PORT || 3000)
+    app.set('port', config.port)
 
     // Respond with index file when a GET request is made to the homepage
     app.get("/", function(_req, res) {
