@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "nodemon app.js",
     "lint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "eslint": "^6.2.2",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^2.0.4",
     "prettier": "^1.18.2"
   }
 }
