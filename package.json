@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "test": "mocha",
     "lint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
