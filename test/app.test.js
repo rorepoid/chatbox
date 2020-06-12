@@ -16,4 +16,15 @@ describe("App", () => {
               });
         });
     });
+
+    describe("GET /webhook", (done) => {
+    	it("Returns 403 because token missing or fails", (done) => {
+            chai.request(app)
+	        .get("/webhook")
+	        .end((err, res) => {
+		    expect(res).to.have.status(403);
+		    done();
+	    });
+	});
+    });
 });

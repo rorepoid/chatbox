@@ -15,9 +15,14 @@
         res.send("Hello World");
     });
 
+    // Adds suport for get Requests to our webhook
+    app.get("/webhook", (_req, res) => {
+        res.sendStatus(403);
+    });
+
     // listen for requests
     const server = app.listen(app.get('port'), () => {
         console.log(`Server on port ${app.get('port')}`);
-    })
+    });
 
     module.exports = server;
