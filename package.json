@@ -1,7 +1,7 @@
 {
   "name": "chatbox",
   "version": "1.0.0",
-  "description": "A chatbot for different platforms",
+  "description": "A chatbot app for different platforms",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
