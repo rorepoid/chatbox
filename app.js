@@ -22,20 +22,19 @@
 	let token = req.query["hub.verify_token"];
 	let challenge = req.query["hub.challenge"];
 
-	// Checks if a token and mode is in the query string of the request
-	if (mode && token) {
-	  // Checks the mode and token sent is correct
-	  if (mode === "subscribe" && token === config.verifyToken) {
-	    // Responds with the challenge token from the request
-	    console.log("WEBHOOK_VERIFIED");
-	    res.status(200).send(challenge);
-	  } else {
-		console.log(config);
-	    // Responds with '403 Forbidden' if verify tokens do not match
-	    res.sendStatus(403);
-	  }
+	// Checks if a token and mode are not in the query string of the request
+	if (!mode || !token) {
+	    return res.sendStatus(403);
 	}
-        res.sendStatus(403);
+
+	// Checks the mode and token sent is not correct
+	if (mode !== "subscribe" || token !== config.verifyToken) {
+	    return res.sendStatus(403);
+	}
+
+	// Responds with the challenge token from the request
+	console.log("WEBHOOK_VERIFIED");
+	res.status(200).send(challenge);
     });
 
     // listen for requests
