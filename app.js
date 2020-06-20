@@ -37,6 +37,11 @@
 	res.status(200).send(challenge);
     });
 
+	// Creates the endpoint for your webhook
+	app.post("/webhook", (req, res) => {
+		console.log("post");
+		return res.sendStatus(403);
+	});
     // listen for requests
     const server = app.listen(app.get('port'), () => {
         console.log(`Server on port ${app.get('port')}`);
